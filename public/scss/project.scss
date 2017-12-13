@@ -1,0 +1,51 @@
+@mixin margin-padding {
+	margin-top: 30px;
+}
+
+#proj {
+	padding-top: 80px;
+	//background: #ccc;
+
+	height: 800px;
+	width: 1000px;
+	margin: 0 auto;
+}
+.proj {
+	width: 960px;
+	height: 300px;
+	background: #ddd;
+	@include margin-padding;
+	padding: 0 20px;
+
+	a {
+		font-size: 40px;
+	}
+
+	.art_mes {
+		margin-top: 5px;
+		border-bottom: 1px solid #999;
+
+		em,i{
+			margin-left: 10px;
+		}
+	}
+
+	.cont {
+		@include margin-padding;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+
+		img {
+			width: 250px;
+			height: 130px;
+		}
+		p {
+			width: 650px;
+			display: inline-block;
+		}
+	}
+	
+}
+

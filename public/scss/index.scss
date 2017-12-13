@@ -1,0 +1,56 @@
+@mixin margin-padding {
+	margin-top: 20px;
+}
+
+#show {
+	 padding-top:80px;
+
+	width: 1000px;
+	height: 480px;
+	margin: 0 auto;
+	background: #AAA;
+}
+
+#values {
+	width: 1500px;
+	height: 300px;
+	margin: 0 auto;
+	@include margin-padding;
+
+	display: flex;
+	flex-direction:row;
+	justify-content: space-around;
+
+	.value {
+		width: 400px;
+		margin: 0 20px;
+		background: #eee;
+	}
+}
+
+
+#intro {
+	width: 800px;
+	height: 400px;
+	margin: 0 auto;
+	background: lightgreen;
+	@include margin-padding;
+}
+
+
+#results {
+	width: 800px;
+	height: 300px;
+	margin: 0 auto;
+	background: #CCC;
+	@include margin-padding;
+}
+
+#service {
+	width: 800px;
+	height: 300px;
+	margin: 0 auto;
+	background: #888;
+	@include margin-padding;
+	margin-bottom: 20px;
+}
