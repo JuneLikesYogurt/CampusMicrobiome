@@ -1,9 +1,22 @@
 #show {
-  padding-top: 80px;
+  position: relative;
+  top: 80px;
+  width: 637px;
+  height: 533px;
+  margin: 0 auto; }
+
+#intro {
   width: 1000px;
-  height: 480px;
+  height: 400px;
   margin: 0 auto;
-  background: #AAA; }
+  background: #eee;
+  margin-top: 100px; }
+  #intro p {
+    text-indent: 80px;
+    font-size: 20px;
+    font-weight: lighter;
+    word-spacing: 5px;
+    line-height: 30px; }
 
 #values {
   width: 1500px;
@@ -17,13 +30,6 @@
     width: 400px;
     margin: 0 20px;
     background: #eee; }
-
-#intro {
-  width: 800px;
-  height: 400px;
-  margin: 0 auto;
-  background: lightgreen;
-  margin-top: 20px; }
 
 #results {
   width: 800px;
