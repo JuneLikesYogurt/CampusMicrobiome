@@ -55,7 +55,8 @@ footer {
   footer #f0 {
     margin-top: 20px; }
   footer #f1 {
-    margin-top: 50px;
+    width: 1000px;
+    margin: 50px auto;
     display: flex;
     flex-direction: cloumn;
     justify-content: space-around; }
