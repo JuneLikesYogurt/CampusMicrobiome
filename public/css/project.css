@@ -38,11 +38,6 @@
   padding: 0 20px; }
   .proj a {
     font-size: 40px; }
-  .proj .art_mes {
-    margin-top: 5px;
-    border-bottom: 1px solid #999; }
-    .proj .art_mes em, .proj .art_mes i {
-      margin-left: 10px; }
   .proj .cont {
     margin-top: 30px;
     display: flex;
