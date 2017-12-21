@@ -15,7 +15,8 @@ a {
 nav {
   width: 100%;
   height: 80px;
-  background: #eee;
+  background: white;
+  box-shadow: 0px 0px 15px #ccc;
   position: fixed;
   top: 0;
   z-index: 5;
@@ -54,19 +55,22 @@ nav {
 .drop_cont {
   display: none;
   position: absolute;
-  background: #eee; }
+  box-sizing: border-box;
+  box-shadow: 0px 0px 15px #ccc;
+  margin-top: 8px;
+  left: 1555px; }
   .drop_cont dl {
     width: 150px; }
   .drop_cont dd {
     width: 70px;
     float: left;
     padding: 0 40px; }
-    .drop_cont dd:hover {
-      background: #ddd; }
   .drop_cont a {
     color: black;
     font-size: 15px;
     line-height: 20px; }
+    .drop_cont a:hover {
+      color: #aaa; }
 
 .dropdown:hover .drop_cont {
   display: block; }
@@ -74,8 +78,11 @@ nav {
 footer {
   width: 100%;
   height: 400px;
-  background: #aaa;
-  color: #666; }
+  background: #eee;
+  padding-top: 30px;
+  color: #666;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 8px #eee; }
   footer strong {
     font-size: 40px;
     font-weight: lighter;
@@ -102,7 +109,7 @@ footer {
     footer #f1 dl dd {
       text-align: right; }
   footer #f2 {
-    margin-top: 70px;
+    margin-top: 60px;
     text-align: center; }
 
 /*# sourceMappingURL=base.css.map */
