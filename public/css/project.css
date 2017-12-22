@@ -1,7 +1,8 @@
 #intro {
   width: 900px;
-  height: 1300px;
-  background: #ddd;
+  height: auto;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 15px #ccc;
   margin: 0 auto;
   padding: 20px 50px;
   position: relative;
@@ -19,7 +20,7 @@
     text-indent: 50px;
     font-size: 20px;
     line-height: 25px;
-    font-weight: 320; }
+    font-family: Verdana; }
   #intro section {
     width: 559px;
     margin: 40px auto; }
@@ -54,5 +55,13 @@
       text-indent: 30px;
       font-size: 20px;
       font-weight: 350; }
+
+#ref {
+  padding-top: 80px;
+  width: 1000px;
+  height: auto;
+  margin: 50px auto; }
+  #ref p {
+    margin: 18px 0; }
 
 /*# sourceMappingURL=project.css.map */
