@@ -14,11 +14,11 @@
 // }
 
 .co_f_a {
-	padding-top: 80px;
+	padding-top: 8em;
 
-	width: 1200px;
+	width: 110em;
 	height: auto;
-	margin: 20px auto;
+	margin: 2em auto;
 	
 	display: flex;
 	flex-direction: row;
@@ -28,11 +28,11 @@
 	.co_a {
 		// background: #aaa;
 		box-sizing:border-box;
- 		box-shadow:0px 0px 15px #ccc;
+ 		box-shadow:0em 0em 1em #ccc;
 		
-		margin: 30px auto;
-		width: 500px;
-		height: 200px;
+		margin: 3em auto;
+		width: 40em;
+		height: 18em;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
@@ -45,6 +45,7 @@
 
 	ul {
 		display: inline-block;
-		margin: 0 20px;
+		margin: 0 0.7em;
+		font-size: 2em;
 	}
 }

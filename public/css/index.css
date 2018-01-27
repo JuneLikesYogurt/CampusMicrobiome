@@ -1,58 +1,63 @@
-/*
-Error: Invalid CSS after "": expected selector, was "0@mixin margin-..."
-        on line 1 of scss/index.scss
+#show {
+  position: relative;
+  top: 8em;
+  width: 637px;
+  height: 533px;
+  margin: 0 auto; }
 
-1: 0@mixin margin-padding {
-2: 	margin-top: 80px;
-3: }
-4: 
-5: #show {
-6: 	position: relative;
+#intro {
+  width: 85em;
+  height: auto;
+  margin: 0 auto;
+  box-sizing: border-box;
+  box-shadow: 0em 0em 1em #ccc;
+  margin-top: 10em;
+  padding: 3em 5em; }
+  #intro p {
+    text-indent: 2.5em;
+    font-size: 2em;
+    line-height: 1.5em; }
 
-Backtrace:
-scss/index.scss:1
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/scss/parser.rb:1278:in `expected'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/scss/parser.rb:1208:in `expected'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/scss/parser.rb:1188:in `expr!'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/scss/static_parser.rb:20:in `parse_selector'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/tree/visitors/perform.rb:438:in `visit_rule'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/stack.rb:79:in `block in with_base'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/stack.rb:135:in `with_frame'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/stack.rb:79:in `with_base'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/tree/visitors/perform.rb:162:in `visit'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/tree/visitors/base.rb:52:in `map'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/tree/visitors/perform.rb:161:in `visit'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/tree/visitors/perform.rb:10:in `visit'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/tree/root_node.rb:36:in `css_tree'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/plugin/compiler.rb:209:in `each'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.4/lib/sass/plugin/compiler.rb:320:in `block in watch'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
-D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"\": expected selector, was \"0@mixin margin-...\"\A         on line 1 of scss/index.scss\A \A 1: 0@mixin margin-padding {\A 2: 	margin-top: 80px;\A 3: }\A 4: \A 5: #show {\A 6: 	position: relative;"; }
+#values {
+  margin: 0 auto;
+  margin-top: 8em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+  #values .value {
+    width: 33em;
+    box-sizing: border-box;
+    box-shadow: 0em 0em 1em #ccc;
+    opacity: 0.8; }
+    #values .value span {
+      display: block;
+      font-size: 4em; }
+  #values #v1, #values #v2, #values #v3 {
+    padding: 3em 6em; }
+  #values #v1 {
+    background: #FFDAC8; }
+  #values #v2 {
+    background: #E8FFC4; }
+  #values #v3 {
+    background: #FFFFCE; }
+
+#results {
+  width: 80em;
+  margin: 0 auto;
+  margin-bottom: 8em;
+  margin-top: 8em;
+  box-sizing: border-box;
+  box-shadow: 0em 0em 1em #ccc; }
+  #results #res1, #results #res2, #results #res3 {
+    padding: 4em 0em 4em 0em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center; }
+    #results #res1 p, #results #res2 p, #results #res3 p {
+      width: 25em;
+      display: inline-block;
+      font-size: 2em;
+      line-height: 1.3em; }
+
+/*# sourceMappingURL=index.css.map */
