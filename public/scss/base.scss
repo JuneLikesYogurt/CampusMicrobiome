@@ -118,7 +118,8 @@ footer {
 
 	#f3 {
 		margin:0 auto;
-		width:100em;
+		width:auto;
+		padding:0em 20% 0em 20%;
 	}
 
 	strong {
@@ -133,27 +134,18 @@ footer {
 	}
 	
 	#f1 {
-		display: inline-block;
-		margin-left: 40em;
-		width: 35em;
-		dl {
-			width: 35em;
-			height: 3em;	
+		p {
+			height: 3em;
 			font-size: 2.5em;
-			
-			dt {
-				height: 3em;
-				float:right;
-				padding-left:1em;
-				img {
-					max-width: 18%;
-				}
-			}
-			dd {
-				text-align: right;
-
+			text-align: right;
+			margin-top: 0.5em;
+			img {
+				padding-left: 1em;
+				max-width: 3%;
 			}
 		}
+		
+
 	}
 	
 	#f2 {

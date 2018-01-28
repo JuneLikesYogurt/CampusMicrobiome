@@ -90,7 +90,8 @@ footer {
   box-shadow: 0em 0em 0.8em #eee; }
   footer #f3 {
     margin: 0 auto;
-    width: 100em; }
+    width: auto;
+    padding: 0em 20% 0em 20%; }
   footer strong {
     font-size: 4em;
     font-weight: lighter;
@@ -98,22 +99,14 @@ footer {
   footer #f0 {
     margin-top: 2em;
     font-size: 2em; }
-  footer #f1 {
-    display: inline-block;
-    margin-left: 40em;
-    width: 35em; }
-    footer #f1 dl {
-      width: 35em;
-      height: 3em;
-      font-size: 2.5em; }
-      footer #f1 dl dt {
-        height: 3em;
-        float: right;
-        padding-left: 1em; }
-        footer #f1 dl dt img {
-          max-width: 18%; }
-      footer #f1 dl dd {
-        text-align: right; }
+  footer #f1 p {
+    height: 3em;
+    font-size: 2.5em;
+    text-align: right;
+    margin-top: 0.5em; }
+    footer #f1 p img {
+      padding-left: 1em;
+      max-width: 3%; }
   footer #f2 {
     font-size: 1.5em;
     margin-top: 60px;
