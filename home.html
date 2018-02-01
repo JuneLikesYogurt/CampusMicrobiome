@@ -5,6 +5,38 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="public/css/base.css">
 	<link rel="stylesheet" type="text/css" href="public/css/index.css">
+	<script type="text/javascript">
+		var nowRes = 1;
+		function MouseWheel(e) {
+			var res;
+			e = e || window.event;
+			for (i = 1;i<3;i++) {
+				if(i == nowRes) {
+					if(e.wheelDelta) {//IE
+						res = document.getElementById('"res"+i');
+						//res.style.display = "block";
+					}else if (e.detail) {//Firefox
+						res = document.getElementById('"res"+i');
+						//  res.style.display = "block";
+					}
+				}else {
+					res = document.getElementById('res+i');
+					res.style.display = "none";
+				}
+				if(nowRes >= 3) {
+					nowRes = 1;
+				}else {
+					nowRes++;
+				}
+			}
+		}
+
+		/*Firefox 注册事件*/
+		if (document.addEventListener) {
+			document.addEventListener("DOMMouseScroll",MouseWheel,false);
+		}
+		window.onmousewheel = document.onmousewheel = MouseWheel;	//IE/Opera/Chrome
+	</script>
 </head>
 <body>
 	<nav>
@@ -29,7 +61,6 @@
 		</div>
 	</nav>
 
-	<!-- <div id="show">show</div> -->
 	<div id="show"><img src="public/webpic12.13/CCDL&weather.png"></div>
 	<div id="intro">
 		<p>Large scale campus is sociologically and biologically defined as a semi-open community, consisting of school gate, teaching buildings, school service buildings, living quarters, roads and other facilities of varying sizes similar to society. Stressors such as temperature and the population density differ among the surface of functional partitions in campus, having potential associations with mirco-environment. However, there still lacks ystematic and comprehensive researches in campus microbiome. Our website provides models and pipelines to reveal the myth of campus mircobiome, bridging the blank space between macro-environment to micro-environment students exposed to. We were especially interested in and tried to address the following questions: (i) Does campus microbiome exert seasonal alteration and how? (ii) Does the density of population influence the microbial communities? (iii) Does campus microbiome feature robustness at the interface with the outside?</p>
@@ -54,14 +85,14 @@
 		Campus microbial composition showed seasonality, with typical biomarkers presenting marked cyclicity during six seasons. Species-species network was applied to reconstruct the inter-species interactions within microbial community. The integral pattern of campus microbiome did not show detectable difference among seasons, while the relative abundance of some components varied markedly. </p>
 		</div>
 		
-<!-- 		<div id="res2">
+		<div id="res2" style="display: none;">
 			<img src="public/webpic12.13/Comfuncompare.gif">
 			<p><strong>Campus microbiome performed considerable robustness against outside disturbances, serving as an independent functional unit that would closely interact with environment. However, the player may change, but the game remains: the compositional pattern of campus microbiome varies in different sites within campus, however, the congruent functional similarity indicates the relative robustness of the integral functions microbiome exert.</p>
 		</div>
-		<div id="res3">
-			<img src="public/webpic12.13/Effectors.gif">
+		<div id="res3" style="display: none;">
+			<img src="public/webpic12.13/effctors.gif">
 			<p><strong>We examined the ESs (effect size) of seasons, human effects and temperature on the microbial structure and function. Human effects (ES=0.167) and temperature (ES= 0.176) contributed approximately to microbial structure, while season exerted less contribution (ES= 0.097). As for microbial functions, similarly, the influences of human effects (ES=0.139) and temperature (ES=0.130) were stronger than that of season (ES=0.096).</p>
-		</div> -->
+		</div>
 	</div>
 
 	<footer>
