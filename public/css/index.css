@@ -44,12 +44,12 @@
 #results {
   width: 80em;
   margin: 0 auto;
-  margin-bottom: 8em;
-  margin-top: 8em;
-  box-sizing: border-box;
-  box-shadow: 0em 0em 1em #ccc; }
+  margin-bottom: 8em; }
   #results #res1, #results #res2, #results #res3 {
     padding: 4em 0em 4em 0em;
+    margin-top: 8em;
+    box-sizing: border-box;
+    box-shadow: 0em 0em 1em #ccc;
     display: flex;
     flex-direction: row;
     justify-content: space-around;

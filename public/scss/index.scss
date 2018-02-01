@@ -66,12 +66,12 @@
 	
 	margin: 0 auto;
 	margin-bottom: 8em;
-	@include margin-padding;
-	box-sizing:border-box;
- 	box-shadow:0em 0em 1em #ccc;
 
 	#res1,#res2,#res3 {
 		padding:4em 0em 4em 0em;
+		@include margin-padding;
+		box-sizing:border-box;
+ 		box-shadow:0em 0em 1em #ccc;
 
 		display: flex;
 		flex-direction: row;
