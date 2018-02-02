@@ -8,45 +8,43 @@
 	<script type="text/javascript">
 		var nowRes = 1;
 		var results = document.getElementById('results');
-		results.onmouseover = function MouseWheel(e) {
-		//function MouseWheel(e) {
-			var res,i = 1;
-			e = e || window.event;
-			if(i = nowRes) {
-				if(e.wheelDelta) {//IE
-					var j=1;
-					while(i != j && j<4){//循环，设置其余的不显示
-						elseRes = document.getElementById("res"+j);
-						res = document.getElementById("res"+i);
-						elseRes.style.display = "none";
-						res.style.display = "flex";// //设置当前的为显示
-						j++;
-					}	
-				}else if (e.detail) {//Firefox
-					var j=1;
-					while(i != j && j<4){//循环，设置其余的不显示
-						elseRes = document.getElementById("res"+j);
-						res = document.getElementById("res"+i);
-						elseRes.style.display = "none";
-						res.style.display = "flex";//设置当前的为显示
-						j++;
-					}	
-				}
-			}
-			if(nowRes >= 3) {
-				nowRes = 1;
-				i = 1;
-			}else {
-				nowRes++;
-				i++;
-			}
-		}
-		
+		var i=1;
 		/*Firefox 注册事件*/
 		if (document.addEventListener) {
 			document.addEventListener("DOMMouseScroll",MouseWheel,false);
 		}
 		window.onmousewheel = document.onmousewheel = MouseWheel;	//IE/Opera/Chrome
+
+		//results.onmouseover = function MouseWheel(e) {
+		function MouseWheel(e) {
+			e = e || window.event;
+			if(e.wheelDelta) {//IE
+				//设置当前的为显示
+				res = document.getElementById("res"+i);
+				res.style.display = "flex";
+				//循环，设置其余的不显示
+				for(j = 1;j < 4;j++) {
+					if(j != i){
+						elseRes = document.getElementById("res"+j);
+					 	elseRes.style.display = "none";
+					}
+				}
+				if(i >= 3){
+					i = 0;
+				}console.log(i);
+			}
+			i++;
+			// else if (e.detail) {//Firefox
+			// 	var j=1;
+			// 	while(i != j && j<=3){//循环，设置其余的不显示
+			// 		elseRes = document.getElementById("res"+j);
+			// 		res = document.getElementById("res"+i);
+			// 		elseRes.style.display = "none";
+			// 		res.style.display = "flex";//设置当前的为显示 
+			// 		j++;
+			// 	}	
+			// }
+		}
 	</script>
 </head>
 <body>
