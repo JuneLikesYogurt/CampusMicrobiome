@@ -1,123 +1,133 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>CampusMicrobiome</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="public/css/base.css">
-	<link rel="stylesheet" type="text/css" href="public/css/index.css">
-	<script type="text/javascript">
-		var nowRes = 1;
-		var results = document.getElementById('results');
-		var i=1;
-		/*Firefox 注册事件*/
-		if (document.addEventListener) {
-			document.addEventListener("DOMMouseScroll",MouseWheel,false);
-		}
-		window.onmousewheel = document.onmousewheel = MouseWheel;	//IE/Opera/Chrome
+    <title>CampusMicrobiome</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="public/css/base.css">
+    <link rel="stylesheet" type="text/css" href="public/css/index.css">
+    <script type="text/javascript">
+    var results = document.getElementById('results');
+    var i = 1,
+        j = 1;
 
-		//results.onmouseover = function MouseWheel(e) {
-		function MouseWheel(e) {
-			e = e || window.event;
-			if(e.wheelDelta) {//IE
-				//设置当前的为显示
-				res = document.getElementById("res"+i);
-				res.style.display = "flex";
-				//循环，设置其余的不显示
-				for(j = 1;j < 4;j++) {
-					if(j != i){
-						elseRes = document.getElementById("res"+j);
-					 	elseRes.style.display = "none";
-					}
-				}
-				if(i >= 3){
-					i = 0;
-				}console.log(i);
-			}
-			i++;
-			// else if (e.detail) {//Firefox
-			// 	var j=1;
-			// 	while(i != j && j<=3){//循环，设置其余的不显示
-			// 		elseRes = document.getElementById("res"+j);
-			// 		res = document.getElementById("res"+i);
-			// 		elseRes.style.display = "none";
-			// 		res.style.display = "flex";//设置当前的为显示 
-			// 		j++;
-			// 	}	
-			// }
-		}
-	</script>
+    if (document.addEventListener) {
+        document.addEventListener("DOMMouseScroll", MouseWheel, false);
+    } //Firefox
+    document.onmousewheel = MouseWheel; //IE/Opera/Chrome
+
+    function MouseWheel(e) {
+        var e = e || event;
+        var dir = true; //默认为真，即向上
+
+        //console.log(e.wheelDelta); //120
+        //console.log(e.detail);	//Firefox 3 
+
+        if (e.wheelDelta) { //IE
+            dir = e.wheelDelta > 0 ? true : false;
+        } else {
+            dir = e.wheelDelta < 0 ? true : false;
+        }
+
+        if (dir) { //滚轮向上
+            if (i > 1) {
+                i--;
+                now = document.getElementById("res" + i);
+                last = document.getElementById("res" + j);
+                now.style.display = "flex";
+                last.style.display = "none";
+                j--;
+            }
+        } else { //滚轮向下
+            if (i < 3) {
+                i++;
+                now = document.getElementById("res" + i);
+                last = document.getElementById("res" + j);
+                now.style.display = "flex";
+                last.style.display = "none";
+                j++;
+            }
+        }
+        // console.log(i);
+        // console.log(j);
+
+        // addEventLisrener 绑定的时间需要通过event对象下面的的 preventDefaul
+        if (e.preventDefault) {
+            e.preventDefault();
+        }
+        return false; //阻止默认行为(阻止的是 obj.on时间名称=fn 所触发的默认行为)
+    }
+    </script>
 </head>
+
 <body>
-	<nav>
-		<div id="name"><p>CampusMicrobiome</p></div>
-		<div class="item">
-			<ul>
-				<li><a href="home">Home</a></li>
-				<li class="dropdown">
-					<a class="drop_btn" href="">Project</a>
-					<div class="drop_cont">
-						<dl>
-							<dd><a href="p_intro">Introduction</a></dd>
-							<dd><a href="p_res">Results</a></dd>
-							<dd><a href="p_meth">Methods</a></dd>
-							<dd><a href="p_ref">References</a></dd>
-						</dl>					
-					</div>
-				</li>
-				<li><a href="outreach">Outeach</a></li>
-				<li><a href="about">About</a></li>
-			</ul>
-		</div>
-	</nav>
-
-	<div id="show"><img src="public/webpic12.13/CCDL&weather.png"></div>
-	<div id="intro">
-		<p>Large scale campus is sociologically and biologically defined as a semi-open community, consisting of school gate, teaching buildings, school service buildings, living quarters, roads and other facilities of varying sizes similar to society. Stressors such as temperature and the population density differ among the surface of functional partitions in campus, having potential associations with mirco-environment. However, there still lacks ystematic and comprehensive researches in campus microbiome. Our website provides models and pipelines to reveal the myth of campus mircobiome, bridging the blank space between macro-environment to micro-environment students exposed to. We were especially interested in and tried to address the following questions: (i) Does campus microbiome exert seasonal alteration and how? (ii) Does the density of population influence the microbial communities? (iii) Does campus microbiome feature robustness at the interface with the outside?</p>
-	</div>
-
-	<div id="values">
-		<div class="value" id="v1">
-			<span>Microbiome</span> <span>makes</span> <span >a</span> <span>difference</span>
-		</div>
-		<div class="value" id="v2">
-			<span>Data</span> <span>tell</span> <span>story</span>
-		</div>
-		<div class="value" id="v3">
-			<span>Insights</span> <span >worth</span> <span>sharing</span>
-		</div>
-	</div>
-
-	<div id="results">
-		<div id="res1">
-			<img src="public/webpic12.13/seasons.gif">
-			<p><strong>Seasonality:</strong><br>
-		Campus microbial composition showed seasonality, with typical biomarkers presenting marked cyclicity during six seasons. Species-species network was applied to reconstruct the inter-species interactions within microbial community. The integral pattern of campus microbiome did not show detectable difference among seasons, while the relative abundance of some components varied markedly. </p>
-		</div>
-		
-		<div id="res2" style="display: none;">
-			<img src="public/webpic12.13/Comfuncompare.gif" style="width: 360px; height: 200px;">
-			<p><strong>Composition versus Function:</strong><br>
-			Campus microbiome performed considerable robustness against outside disturbances, serving as an independent functional unit that would closely interact with environment. However, the player may change, but the game remains: the compositional pattern of campus microbiome varies in different sites within campus, however, the congruent functional similarity indicates the relative robustness of the integral functions microbiome exert.</p>
-		</div>
-		<div id="res3" style="display: none;">
-			<img src="public/webpic12.13/effctors.gif">
-			<p><strong>Multiple effectors:</strong><br>
-			We examined the ESs (effect size) of seasons, human effects and temperature on the microbial structure and function. Human effects (ES=0.167) and temperature (ES= 0.176) contributed approximately to microbial structure, while season exerted less contribution (ES= 0.097). As for microbial functions, similarly, the influences of human effects (ES=0.139) and temperature (ES=0.130) were stronger than that of season (ES=0.096).</p>
-		</div>
-	</div>
-
-	<footer>
-		<div id="f3">
-			<strong>Contact Us</strong>
-			<p id="f0">Huazhong University of Science & Technology</p>
-			<div id="f1">
-				<p>+86 027 87793041<img src="public/webpic12.13/phone.png"></p>
-				<p>ningkang@hust.edu.cn<img src="public/webpic12.13/email.png"></p>
-				<p>Wuhan,Luoyu Road<img src="public/webpic12.13/map.png"></p>
-			</div>
-		</div>
-		
-		<p id="f2">The School of Life Science and Technology, Huazhong University of Science & Technology © 2017 all rights reserved.</p>
-	</footer>
+    <nav>
+        <div id="name">
+            <p>CampusMicrobiome</p>
+        </div>
+        <div class="item">
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li class="dropdown">
+                    <a class="drop_btn" href="">Project</a>
+                    <div class="drop_cont">
+                        <dl>
+                            <dd><a href="p_intro">Introduction</a></dd>
+                            <dd><a href="p_res">Results</a></dd>
+                            <dd><a href="p_meth">Methods</a></dd>
+                            <dd><a href="p_ref">References</a></dd>
+                        </dl>
+                    </div>
+                </li>
+                <li><a href="outreach">Outeach</a></li>
+                <li><a href="about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="show"><img src="public/webpic12.13/CCDL&weather.png"></div>
+    <div id="intro">
+        <p>Large scale campus is sociologically and biologically defined as a semi-open community, consisting of school gate, teaching buildings, school service buildings, living quarters, roads and other facilities of varying sizes similar to society. Stressors such as temperature and the population density differ among the surface of functional partitions in campus, having potential associations with mirco-environment. However, there still lacks ystematic and comprehensive researches in campus microbiome. Our website provides models and pipelines to reveal the myth of campus mircobiome, bridging the blank space between macro-environment to micro-environment students exposed to. We were especially interested in and tried to address the following questions: (i) Does campus microbiome exert seasonal alteration and how? (ii) Does the density of population influence the microbial communities? (iii) Does campus microbiome feature robustness at the interface with the outside?</p>
+    </div>
+    <div id="values">
+        <div class="value" id="v1">
+            <span>Microbiome</span> <span>makes</span> <span>a</span> <span>difference</span>
+        </div>
+        <div class="value" id="v2">
+            <span>Data</span> <span>tell</span> <span>story</span>
+        </div>
+        <div class="value" id="v3">
+            <span>Insights</span> <span>worth</span> <span>sharing</span>
+        </div>
+    </div>
+    <div id="results">
+        <div id="res1">
+            <img src="public/webpic12.13/seasons.gif">
+            <p><strong>Seasonality:</strong>
+                <br> Campus microbial composition showed seasonality, with typical biomarkers presenting marked cyclicity during six seasons. Species-species network was applied to reconstruct the inter-species interactions within microbial community. The integral pattern of campus microbiome did not show detectable difference among seasons, while the relative abundance of some components varied markedly. </p>
+        </div>
+        <div id="res2" style="display: none;">
+            <img src="public/webpic12.13/Comfuncompare.gif" style="width: 360px; height: 200px;">
+            <p><strong>Composition versus Function:</strong>
+                <br> Campus microbiome performed considerable robustness against outside disturbances, serving as an independent functional unit that would closely interact with environment. However, the player may change, but the game remains: the compositional pattern of campus microbiome varies in different sites within campus, however, the congruent functional similarity indicates the relative robustness of the integral functions microbiome exert.</p>
+        </div>
+        <div id="res3" style="display: none;">
+            <img src="public/webpic12.13/effctors.gif">
+            <p><strong>Multiple effectors:</strong>
+                <br> We examined the ESs (effect size) of seasons, human effects and temperature on the microbial structure and function. Human effects (ES=0.167) and temperature (ES= 0.176) contributed approximately to microbial structure, while season exerted less contribution (ES= 0.097). As for microbial functions, similarly, the influences of human effects (ES=0.139) and temperature (ES=0.130) were stronger than that of season (ES=0.096).</p>
+        </div>
+    </div>
+    <footer>
+        <div id="f3">
+            <strong>Contact Us</strong>
+            <p id="f0">Huazhong University of Science & Technology</p>
+            <div id="f1">
+                <p>+86 027 87793041<img src="public/webpic12.13/phone.png"></p>
+                <p>ningkang@hust.edu.cn<img src="public/webpic12.13/email.png"></p>
+                <p>Wuhan,Luoyu Road<img src="public/webpic12.13/map.png"></p>
+            </div>
+        </div>
+        <p id="f2">The School of Life Science and Technology, Huazhong University of Science & Technology © 2017 all rights reserved.</p>
+    </footer>
 </body>
+
 </html>
