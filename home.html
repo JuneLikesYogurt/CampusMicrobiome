@@ -17,7 +17,7 @@
 	document.onmousewheel = MouseWheel; //IE/Opera/Chrome
 	
     function MouseWheel(e) {
-        var e = results.event;
+        var e = e || event;
         var dir = true; //默认为真，即向上
 
         //console.log(e.wheelDelta); //120
@@ -48,18 +48,15 @@
                 j++;
             }
         }
-        //console.log(i);
-        //console.log(j);
-
-        // addEventLisrener 绑定的时间需要通过event对象下面的的 preventDefaul
-        if (e && e.preventDefault) {//如果提供了事件对象，则这是一个非IE浏览器   
-            e.preventDefault();
-        }
-        else {//IE中阻止函数器默认动作的方式  
-        	window.event.returnValue = false;
-        }
-        return false;
     }
+    // addEventLisrener 绑定的时间需要通过event对象下面的的 preventDefaul
+        // if (event && event.preventDefault) {//如果提供了事件对象，则这是一个非IE浏览器   
+        //     event.preventDefault();
+        // }
+        // else {//IE中阻止函数器默认动作的方式  
+        // 	window.event.returnValue = false;
+        // }
+        //return false;
 
     // window.onload = function (e) {
     // 	var results = document.getElementById('results');

@@ -9,7 +9,7 @@
   justify-content: space-around; }
   .co_f_a .co_a {
     box-sizing: border-box;
-    box-shadow: 0em 0em 1em #ccc;
+    border: 0.2em #ccc dashed;
     margin: 3em auto;
     width: 40em;
     height: 18em;
