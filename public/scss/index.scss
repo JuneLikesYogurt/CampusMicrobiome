@@ -36,12 +36,9 @@
 	justify-content: space-around;
 
 	.value {
-		width: 33em;
-		box-sizing:border-box;
- 		//box-shadow:0em 0em 1em #ccc;
+		//width: em;
+		width: auto;
  		border: 0.25em #bbb dashed;
-
-
  		opacity: 0.8;
 		
 		span {
@@ -50,7 +47,7 @@
 		}
 	}
 	#v1,#v2,#v3 {
-		padding: 3em 6em;
+		padding: 3em 8em;
 	}
 	#v1 {
 		background: #FFDAC8;
