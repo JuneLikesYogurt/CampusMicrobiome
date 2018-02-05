@@ -58,5 +58,7 @@
       display: inline-block;
       font-size: 2em;
       line-height: 1.3em; }
+    #results #res1:hover, #results #res2:hover, #results #res3:hover {
+      border: 0.2em #bbb dashed; }
 
 /*# sourceMappingURL=index.css.map */

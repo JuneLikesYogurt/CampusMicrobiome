@@ -83,5 +83,10 @@
 			font-size: 2em;
 			line-height: 1.3em;
 		}
+
+
+		&:hover {
+			border:  0.2em #bbb dashed;
+		}
 	}
 }

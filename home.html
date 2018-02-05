@@ -7,48 +7,66 @@
     <link rel="stylesheet" type="text/css" href="public/css/base.css">
     <link rel="stylesheet" type="text/css" href="public/css/index.css">
     <script type="text/javascript">
-    var results = document.getElementById('results');
     var i = 1,
-        j = 1;
+        j = 0;
 
-    if (document.addEventListener) {
-        document.addEventListener("DOMMouseScroll", MouseWheel,false);
-    } //Firefox
-	document.onmousewheel = MouseWheel; //IE/Opera/Chrome
+ //    if (document.addEventListener) {
+ //        document.addEventListener("DOMMouseScroll", MouseWheel,false);
+ //    } //Firefox
+	// document.onmousewheel = MouseWheel; //IE/Opera/Chrome
+
+	function imgChange () {
+		if(i >3) {
+			i = 1;
+			now = document.getElementById("res" + i);
+	        last = document.getElementById("res" + j);
+	        now.style.display = "flex";
+	        last.style.display = "none";
+	        j = 1;
+		}else {
+			now = document.getElementById("res" + i);
+	        last = document.getElementById("res" + j);
+	        now.style.display = "flex";
+	        if(j != 0) {
+	        	last.style.display = "none";
+	        }
+	        j++;
+		}
+		i++;
+	}
 	
-    function MouseWheel(e) {
-        var e = e || event;
-        var dir = true; //默认为真，即向上
+    // function MouseWheel(e) {
+	   //      var e = e ||window.e;
+	   //      var dir = true; //默认为真，即向上
+	   //      //console.log(e.wheelDelta); //120
+	   //      //console.log(e.detail);	//Firefox 3 
 
-        //console.log(e.wheelDelta); //120
-        //console.log(e.detail);	//Firefox 3 
+	   //      if (e.wheelDelta) { //IE
+	   //          dir = e.wheelDelta > 0 ? true : false;
+	   //      } else {
+	   //          dir = e.wheelDelta < 0 ? true : false;
+	   //      }
 
-        if (e.wheelDelta) { //IE
-            dir = e.wheelDelta > 0 ? true : false;
-        } else {
-            dir = e.wheelDelta < 0 ? true : false;
-        }
-
-        if (dir) { //滚轮向上
-            if (i > 1) {
-                i--;
-                now = document.getElementById("res" + i);
-                last = document.getElementById("res" + j);
-                now.style.display = "flex";
-                last.style.display = "none";
-                j--;
-            }
-        } else { //滚轮向下
-            if (i < 3) {
-                i++;
-                now = document.getElementById("res" + i);
-                last = document.getElementById("res" + j);
-                now.style.display = "flex";
-                last.style.display = "none";
-                j++;
-            }
-        }
-    }
+	   //      if (dir) { //滚轮向上
+	   //          if (i > 1) {
+	   //              i--;
+	   //              now = document.getElementById("res" + i);
+	   //              last = document.getElementById("res" + j);
+	   //              now.style.display = "flex";
+	   //              last.style.display = "none";
+	   //              j--;
+	   //          }
+	   //      } else { //滚轮向下
+	   //          if (i < 3) {
+	   //              i++;
+	   //              now = document.getElementById("res" + i);
+	   //              last = document.getElementById("res" + j);
+	   //              now.style.display = "flex";
+	   //              last.style.display = "none";
+	   //              j++;
+	   //          }
+	   //      }
+	   //  }
     // addEventLisrener 绑定的时间需要通过event对象下面的的 preventDefaul
         // if (event && event.preventDefault) {//如果提供了事件对象，则这是一个非IE浏览器   
         //     event.preventDefault();
@@ -108,7 +126,8 @@
             <span>Insights</span> <span>worth</span> <span>sharing</span>
         </div>
     </div>
-    <div id="results">
+
+    <div id="results" onclick="imgChange()">
         <div id="res1">
             <img src="public/webpic12.13/seasons.gif">
             <p><strong>Seasonality:</strong>
