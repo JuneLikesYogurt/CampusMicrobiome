@@ -1,5 +1,14 @@
-#blank {
+#outreach {
   width: auto;
-  height: 39em; }
+  padding-top: 6em; }
+
+#cont {
+  width: 60%;
+  margin: 5em auto; }
+  #cont h3 {
+    font-size: 10em;
+    margin-bottom: 0.2em; }
+  #cont p {
+    font-size: 4em; }
 
 /*# sourceMappingURL=outr.css.map */

@@ -1,6 +1,7 @@
 @mixin margin-padding {
 	margin-top: 3em;
 }
+
 //Introduction
 #intro {
 	width:80em;
@@ -37,6 +38,9 @@
 		width: 559px;
 		margin: 4em auto;
 	}
+}
+#except{
+	margin-top: 2em;
 }
 
 //Results、Methods

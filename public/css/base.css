@@ -90,7 +90,8 @@ footer {
   footer #f3 {
     margin: 0 auto;
     width: auto;
-    padding: 0em 20% 0em 20%; }
+    padding: 0em 20% 0em 20%;
+    margin-bottom: 2.4em; }
   footer strong {
     font-size: 4em;
     font-weight: lighter;
@@ -106,9 +107,8 @@ footer {
     footer #f1 p img {
       padding-left: 1em;
       max-width: 3%; }
-  footer #f2 {
+  footer .f2 {
     font-size: 1.5em;
-    margin-top: 60px;
     text-align: center; }
 
 /*# sourceMappingURL=base.css.map */
