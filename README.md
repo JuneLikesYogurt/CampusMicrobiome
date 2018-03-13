@@ -1,4 +1,6 @@
-#CampusMicrobiome校园微生物
+CampusMicrobiome校园微生物
+------
+
 为华中科技大学生命科学与技术学院的项目组的同学写的项目官网，包括Home、Project、About等三个界面。
 
 1. 顶栏和底栏
