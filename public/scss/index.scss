@@ -36,27 +36,36 @@
 	justify-content: space-around;
 
 	.value {
-		//width: em;
-		width: auto;
+		width: 30em;
+		margin: 0 5em;
  		border: 0.25em #bbb dashed;
  		opacity: 0.8;
+ 		padding: 5em 3em;
 		
 		span {
 			display: block;
-			font-size: 4em;
+			font-size: 2em;
+			text-align: center;
+			margin: 0 auto;
 		}
-	}
-	#v1,#v2,#v3 {
-		padding: 3em 8em;
 	}
 	#v1 {
 		background: #FFDAC8;
+		span {
+			width: 15em;
+		}
 	}
 	#v2 {
 		background: #E8FFC4;
+		span {
+			width: 8em;
+		}
 	}
 	#v3 {
 		background:	#FFFFCE;
+		span {
+			width: 10em;
+		}
 	}
 }
 
